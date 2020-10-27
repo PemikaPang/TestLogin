@@ -28,13 +28,9 @@ public class LoginActivity extends AppCompatActivity {
                 nameString = nameEditText.getText().toString().trim();
                 password = passwordEditText.getText().toString().trim();
                 //Check Space
-                if (nameString.length() == 0) { //ถ้า name เป็นค่าว่าง
+                if ((nameString.length() == 0) || (password.length() == 0)){ //ถ้า name เป็นค่าว่าง
                     Toast.makeText(getApplicationContext(), "กรุณากรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_SHORT).show();
-                }
-                if (password.length() == 0) { //ถ้า name เป็นค่าว่าง
-                    Toast.makeText(getApplicationContext(), "กรุณากรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_SHORT).show();
-                }
-                if (!password.equals("1234")) {
+                }else if (!password.equals("1234")) {
                     Toast.makeText(getApplicationContext(), "Password ไม่ถูกต้อง", Toast.LENGTH_SHORT).show();
                 } else {    //ถ้า name ไม่เป็นค่าว่าง
                     password = "1234" ;
